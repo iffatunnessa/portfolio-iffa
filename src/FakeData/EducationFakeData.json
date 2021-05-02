@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "programName": "Bachelor Science",
+    "institution":"Ahsanullah University of Science & Technology",
+    "department" : "Computer Science & Engineering",
+    "cgpa" : "CGPA: 3.731",
+    "year" : "2020"
+  }, {
+    "id": 2,
+    "programName": "Higher Secondary Certificate",
+    "institution":"Viqarunnisa Noon School & College",
+    "department" : "Science",
+    "cgpa" : "GPA: 5.0",
+    "year" : "2015"
+  }]
