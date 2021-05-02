@@ -1,39 +1,36 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
-import Nav from '../Nav/Nav';
-import BlogCard from './BlogCard/BlogCard';
-
+import { useParams } from 'react-router';
+import Nav from '../../Nav/Nav';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         marginTop: '20px'
-    },
-    control: {
-        padding: theme.spacing(2),
     },
     header: {
         textAlign: 'center',
         fontSize: 50
     }
 }));
-const Blog = () => {
+
+const ProjectIndividual = () => {
+    const { id } = useParams();
+    
     const classes = useStyles();
     return (
         <div>
-            <h1 className={classes.header}>Blog</h1>
+        <h1 className={classes.header}></h1>
             <hr style={{ width: "300px", border: "2px solid rgba(170, 170, 170, 0.623)" }} />
             <Grid container className={classes.root}>
-            <Grid item xs={3}>
-                <Nav />
-            </Grid>
-            <Grid item xs={8}>
-                <Grid container className={classes.root} >
-                   <BlogCard/>
+                <Grid item xs={3}>
+                    <Nav />
+                </Grid>
+                <Grid item xs={8}>
+                    <h1>okay </h1>
                 </Grid>
             </Grid>
-        </Grid>
-        </div>
+      </div>           
     );
 };
 
-export default Blog;
+export default ProjectIndividual;

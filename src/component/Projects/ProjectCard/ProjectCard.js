@@ -1,19 +1,21 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
+import ProjectIndividual from '../ProjectIndivisual/ProjectIndividual'
 const useStyles = makeStyles({
     root: {
         maxWidth: 345,
     },
 });
 
-
 const ProjectCard = ({ data }) => {
-    const {projectName,image,description,tools,liveSiteUrl,githubClientURL} = data;
+    const {projectName,image,description,tools,liveSiteUrl,githubClientURL,id} = data;
+    const [project, setProject]= useState([]);
     const classes = useStyles();
     return (
         <Grid item xs={4}>
             <Card className={classes.root}>
-                <CardActionArea>
+                <CardActionArea component={Link} to={'/project/'+id}>
                     <CardMedia
                         component="img"
                         alt={projectName}
