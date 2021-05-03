@@ -23,7 +23,7 @@ const EducationCard = ({ data }) => {
                 <p>{cgpa}</p>
 
             </div>
-            <hr style={{ marginBottom: 20 }} />
+            <hr style={{ width:200, marginBottom: 20 }} />
         </div>
     );
 };

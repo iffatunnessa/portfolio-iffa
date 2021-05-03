@@ -9,7 +9,8 @@ import FadeIn from 'react-fade-in';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        marginTop: '20px'
+        marginTop: '20px',
+        marginLeft: '20px'
     },
     header: {
         textAlign: 'center',
@@ -28,21 +29,23 @@ const Resume = () => {
     ]
     return (
         <div>
-            <h1 className={classes.header}>Resume</h1>
-            <hr style={{ width: "300px", border: "2px solid rgba(170, 170, 170, 0.623)" }} />
+            <FadeIn><h1 className={classes.header}>Resume</h1>
+                <hr style={{ width: "300px", border: "2px solid rgba(170, 170, 170, 0.623)" }} /></FadeIn>
+
             <Grid container className={classes.root}>
-                <Grid item xs={3}>
+                <Grid item xs={12} sm={3}>
                     <Nav />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={8}>
                     <Grid container className={classes.root} spacing={4}>
-                        <Grid item xs={6}>
-                            <h2>Education</h2>
-                            <hr style={{ width: "300px", textAlign: "left", border: "1px solid blue" }} />
-                            {
-                                fakeEduData.map(data => <EducationCard data={data} />)
-                            }
-
+                        <Grid item xs={12} sm={6}>
+                            <FadeIn>
+                                <h2>Education</h2>
+                                <hr style={{ width: "300px", textAlign: "left", border: "1px solid blue" }} />
+                                {
+                                    fakeEduData.map(data => <EducationCard data={data} />)
+                                }
+                            </FadeIn>
                         </Grid>
                         <Grid item xs={6}>
                             <FadeIn>

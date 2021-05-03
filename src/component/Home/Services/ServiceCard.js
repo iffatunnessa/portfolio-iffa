@@ -4,7 +4,8 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 280,
         background:'#2d3041',
-        color:'white'
+        color:'white',
+        marginBottom: 20
     },
     img:{
         padding:40,
@@ -17,8 +18,8 @@ const ServiceCard = ({ data }) => {
     const { serviceName, image, description, tools } = data;
     const classes = useStyles();
     return (
-        <Grid item xs={4}>
-            <Card className={classes.root} >
+        <Grid item sm={4} xs={9}>
+            <Card className={classes.root} spacing={4}>
                 <CardMedia
                     component="img"
                     alt={serviceName}
