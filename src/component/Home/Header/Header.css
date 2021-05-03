@@ -1,0 +1,17 @@
+.fade-in-out{
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.fade-in-out {
+    -webkit-animation:fadeinout 4s linear forwards infinite; 
+    animation: fadeinout 4s linear forwards infinite;
+    opacity: 0;
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}

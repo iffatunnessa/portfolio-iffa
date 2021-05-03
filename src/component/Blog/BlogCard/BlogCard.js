@@ -25,7 +25,7 @@ const BlogCard = () => {
                                 Demo Title
                         </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Demo description Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus cum, accusantium asperiores provident fugiat ad eos magnam! Repudiandae illum mollitia totam minima temporibus voluptas blanditiis adipisci accusantium, illo eligendi maxime.
+                                Demo description.
                         </Typography>
                         </CardContent>
                     </CardActionArea>

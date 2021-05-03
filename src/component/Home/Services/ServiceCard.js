@@ -3,6 +3,8 @@ import React from 'react';
 const useStyles = makeStyles({
     root: {
         maxWidth: 280,
+        background:'#2d3041',
+        color:'white'
     },
     img:{
         padding:40,
@@ -15,7 +17,7 @@ const ServiceCard = ({ data }) => {
     const { serviceName, image, description, tools } = data;
     const classes = useStyles();
     return (
-        <Grid Item xs={4} spacing={2}>
+        <Grid item xs={4}>
             <Card className={classes.root} >
                 <CardMedia
                     component="img"
@@ -29,7 +31,7 @@ const ServiceCard = ({ data }) => {
                     <Typography gutterBottom variant="h5" component="h2">
                         {serviceName}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2"  component="p">
                         {description}
                     </Typography>
                     <Typography variant="body2" component="h6">Tools: {tools}</Typography>

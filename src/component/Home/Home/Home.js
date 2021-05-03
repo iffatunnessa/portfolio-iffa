@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Header from '../Header/Header';
 import Services from '../Services/Services';
+import FadeIn from 'react-fade-in';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,8 +21,12 @@ const Home = () => {
                     <Nav />
                 </Grid>
                 <Grid item xs={8}>
-                    <Header />
-                    <Services />
+                    <FadeIn>
+                        <Header />
+                    </FadeIn>
+                    <FadeIn>
+                        <Services />
+                    </FadeIn>
                 </Grid>
             </Grid>
         </div>
