@@ -1,4 +1,4 @@
-import frontEnd from '../icon/programming.png';
+import frontEnd from '../icon/website-content.png';
 import backEnd from '../icon/backend.png';
 import illustrations from '../icon/illustration.png';
 

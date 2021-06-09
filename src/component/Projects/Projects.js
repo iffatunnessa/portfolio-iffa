@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         marginTop: '20px',
-        marginLeft: 10
+        padding:'20px'
     },
     control: {
         padding: theme.spacing(2),
@@ -33,9 +33,9 @@ const Projects = () => {
                 <Grid item xs={12} sm={3}>
                     <Nav />
                 </Grid>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12} sm={8} md={8} lg={8}>
                     <FadeIn>
-                        <Grid container className={classes.root} spacing={4}>
+                        <Grid container spacing={4}>
                             {
                                 fakeProjectData.map(data => <ProjectCard data={data} />)
                             }

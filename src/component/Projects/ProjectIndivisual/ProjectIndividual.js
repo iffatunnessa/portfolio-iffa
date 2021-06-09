@@ -28,13 +28,13 @@ const ProjectIndividual = () => {
             <h1 className={classes.header}>{projectName}</h1>
             <hr style={{ width: "300px", border: "2px solid rgba(170, 170, 170, 0.623)" }} />
             <Grid container className={classes.root}>
-                <Grid item xs={3}>
+                <Grid item xs={12} sm={12} md={3} lg={3}>
                     <Nav />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={12} md={8} lg={8}>
                     <ProjectAutoCarousel />
                     <Grid container className={classes.root} spacing={4}>
-                        <Grid item xs={8}>
+                        <Grid item  xs={12} sm={12} md={8} lg={8}>
                             <ProjectDetails details={fullDetails}/>
                         </Grid>
                         <Grid item xs={4}>

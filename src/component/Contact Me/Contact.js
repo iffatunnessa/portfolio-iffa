@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Alert from '@material-ui/lab/Alert';
-import { Button, Container, Grid, makeStyles, TextField } from '@material-ui/core';
+import { Button, Container,  Grid, makeStyles, TextField } from '@material-ui/core';
 import Nav from '../Nav/Nav';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,13 +9,21 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             margin: theme.spacing(1),
             width: '100px',
+
         },
     }, container: {
         marginTop: 50,
         paddingTop: 20,
         paddingBottom: 60,
-        backgroundColor: 'white',
-        borderRadius: 5
+        borderRadius: 5,
+        background: '#2d3041',
+        color: 'white',
+        objectFit:"cover",
+        transition: "all .2s ease-in-out",
+        "&:hover": {
+            objectFit:"cover",
+            transform: "scale(1.1)",
+        }
     },
     btn: {
         marginTop: 20
@@ -39,7 +47,7 @@ const Contact = () => {
                 <Nav />
             </Grid>
             <Grid item xs={8} >
-                <h1 className={classes.header}>Contact Me</h1>
+                <h1 className={classes.header}>Get in Touch</h1>
                 <hr style={{ width: "300px", border: "2px solid rgba(170, 170, 170, 0.623)" }} />
                 <Container maxWidth="sm" className={classes.container}>
                     <Grid container className={classes.root} >
@@ -51,6 +59,9 @@ const Contact = () => {
                                     name="email"
                                     fullWidth='true'
                                     required='true'
+                                    InputLabelProps={{
+                                        style: { color: '#fff' }, 
+                                     }}
                                 />
                                 <ValidationError
                                     prefix="Email"
@@ -64,6 +75,9 @@ const Contact = () => {
                                     name="message"
                                     fullWidth='true'
                                     required='true'
+                                    InputLabelProps={{
+                                        style: { color: '#fff' }, 
+                                     }}
                                 />
                                 <ValidationError
                                     prefix="Message"

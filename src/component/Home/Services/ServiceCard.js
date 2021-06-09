@@ -1,16 +1,25 @@
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 const useStyles = makeStyles({
     root: {
         maxWidth: 280,
-        background:'#2d3041',
-        color:'white',
-        marginBottom: 20
+        background: 'none',
+        color: 'white',
+        marginBottom: 20,
+        border:"none",
+        objectFit:"cover",
+        transition: "all .2s ease-in-out",
+        "&:hover": {
+            objectFit:"cover",
+            transform: "scale(1.1)",
+        }
     },
-    img:{
-        padding:40,
-        textAlign:"center"
-    }
+    img: {
+        padding: 40,
+        height : "200px",
+        width : "200px",
+        textAlign: "center"
+    },
 });
 
 
@@ -23,16 +32,15 @@ const ServiceCard = ({ data }) => {
                 <CardMedia
                     component="img"
                     alt={serviceName}
-                    height="190"
                     image={image}
                     title={serviceName}
-                    className={classes.img} 
+                    className={classes.img}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" style={{fontWeight:"bolder"}}>
                         {serviceName}
                     </Typography>
-                    <Typography variant="body2"  component="p">
+                    <Typography variant="body2" component="p">
                         {description}
                     </Typography>
                     <Typography variant="body2" component="h6">Tools: {tools}</Typography>

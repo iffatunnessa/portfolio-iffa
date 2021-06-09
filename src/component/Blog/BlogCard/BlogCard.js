@@ -2,42 +2,36 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid
 import React from 'react';
 const useStyles = makeStyles({
     root: {
-        maxWidth: 400,
+        flexGrow: 1,
+        marginTop: '20px',
+        width: 280,
+        objectFit:"cover",
+        transition: "all .2s ease-in-out",
+        "&:hover": {
+            objectFit:"cover",
+            transform: "scale(1.1)",
+        }
     },
+
 });
 
-const BlogCard = () => {
+const BlogCard = ({ data }) => {
+    const { id, redirectedLink, photo } = data;
     const classes = useStyles();
     return (
-        <div>
-            <Grid item xs={4}>
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia
-                            component="img"
-                            alt='Demo'
-                            height="140"
-                            image=''
-                            title='blog1'
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                Demo Title
-                        </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                Demo description.
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary" href='https://medium.com/@iffatunnessa'>
-                            See More
-                </Button>
-                    </CardActions>
-                </Card>
-            </Grid>
-
-        </div>
+        <Grid item xs={12} sm={6} md={4}>
+            <Card className={classes.root}>
+                <CardActionArea onClick={() => window.open(redirectedLink, "_blank")}>
+                    <CardMedia
+                        component="img"
+                        alt="blog"
+                        height="170"
+                        image={photo}
+                        title='blog'
+                    />
+                </CardActionArea>
+            </Card>
+        </Grid>
     );
 };
 

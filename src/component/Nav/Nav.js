@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     large: {
         width: "200px",
         height: "200px",
-        marginLeft: "20%",
+        marginLeft: "17%",
     },
     appBar: {
         [theme.breakpoints.up('sm')]: {
@@ -51,11 +51,19 @@ const useStyles = makeStyles((theme) => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
-        background: '#111111d8',
+        background: '#121212',
     },
     content: {
         flexGrow: 1,
         padding: theme.spacing(5),
+    },
+    links:{
+        objectFit:"cover",
+        transition: "all .2s ease-in-out",
+        "&:hover": {
+            objectFit:"cover",
+            transform: "scale(1.1)",
+        }
     },
     '@global': {
         '*::-webkit-scrollbar': {
@@ -68,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'rgba(0,0,0,.5)',
             outline: '1px solid slategrey'
         }
+      
     }
 }));
 
@@ -85,15 +94,15 @@ const Nav = () => {
         <div>
             <div className={classes.toolbar} />
             <Avatar alt="Iffatun Nessa" src={profilePicture} className={classes.large} />
-            <div>
-                <IconButton color="secondary" aria-label="upload picture" href='https://github.com/iffatunnessa'>
+            <div style={{paddingLeft: '30%', paddingTop:'10%'}}>
+                <IconButton style={{color: "#6e5494", fontSize:40}} className={classes.links} aria-label="upload picture" onClick={() => window.open('https://github.com/iffatunnessa', "_blank")}>
                     <FontAwesomeIcon icon={faGithubSquare} />
                 </IconButton>
-                <IconButton color="primary" aria-label="upload picture" href='https://www.linkedin.com/in/iffatun-nessa/'>
+                <IconButton style={{color: "#00a0dc", fontSize:40}} className={classes.links} aria-label="upload picture" onClick={() => window.open('https://www.linkedin.com/in/iffatun-nessa/', "_blank")}>
                     <FontAwesomeIcon icon={faLinkedin} />
                 </IconButton>
             </div>
-            <Divider />
+            <Divider style={{backgroundColor:'#2b2b2b'}} />
             <List>
                 <ListItem button component={Link} to='/home'>
                     <ListItemIcon> <HomeIcon style={{ color: 'white' }} /></ListItemIcon>

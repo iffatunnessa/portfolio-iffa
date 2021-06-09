@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { Box, makeStyles } from '@material-ui/core';
 import React from 'react';
 const useStyles = makeStyles((theme) => ({
     yearNumber: {
@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 14,
         textAlign: "center",
         marginRight: 30,
+        color: "#636574"
     }
 }));
 const EducationCard = ({ data }) => {
@@ -16,14 +17,21 @@ const EducationCard = ({ data }) => {
     const classes = useStyles();
     return (
         <div>
-            <h5 style={{ fontSize: 15, color: "#636574" }}> <span className={classes.yearNumber}>{year}</span> {programName} </h5>
+            <Box
+                display="flex"
+                flexWrap="wrap"
+                p={1}
+                m={1}>
+                <h5 className={classes.yearNumber}>{year}</h5>
+                <h5 style={{ fontSize: 15, color: "#636574", paddingTop: '10px' }}>  {programName} </h5>
+            </Box>
             <div style={{ marginLeft: 90 }}>
                 <p>{institution}</p>
                 <p>{department}</p>
                 <p>{cgpa}</p>
 
             </div>
-            <hr style={{ width:200, marginBottom: 20 }} />
+            <hr style={{ width: 200, marginBottom: 20 }} />
         </div>
     );
 };

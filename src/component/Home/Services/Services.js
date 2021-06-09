@@ -16,13 +16,16 @@ const Services = () => {
     const classes = useStyles();
     const [service, setService] = useState(ServiceFakeData);
     return (
-        <div style={{marginTop:100}}>
+        <div style={{ marginTop: 100 }}>
             <h1>What I do</h1>
-            <Grid container className={classes.root}>
+            <Grid className={classes.root}
+                container
+                direction="row"
+            >
                 {/* <Grid> */}
-                    {
-                        service.map(element => <ServiceCard data={element} />)
-                    }
+                {
+                    service.map(element => <ServiceCard data={element} />)
+                }
                 {/* </Grid> */}
             </Grid>
         </div>
